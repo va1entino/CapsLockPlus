@@ -1,6 +1,6 @@
 ﻿; if not A_IsAdmin ;running by administrator
 ; {
-;    Run *RunAs "%A_ScriptFullPath%" 
+;    Run *RunAs "%A_ScriptFullPath%"
 ;    ExitApp
 ; }
 
@@ -14,7 +14,7 @@ Menu, Tray, Icon,,, 1
 
 
 
-global CLversion:="Version: 2.7.0.0 | 2016-11-30`n`nCopyright 2016 Chen JunKai" 
+global CLversion:="Version: 2.7.0.0 | 2016-11-30`n`nCopyright 2016 Chen JunKai"
 
 global cClipboardAll ;CapsLockPlus clipboard
 global caClipboardAll ;CapsLockPlusalt clipboard
@@ -34,7 +34,7 @@ allowRunOnClipboardChange:=true
 ;  #include ..\language\English.ahk
 ; /language
 
-#include lib_settings.ahk ;get the settings from CapsLockPlusSettings.ini 
+#include lib_settings.ahk ;get the settings from CapsLockPlusSettings.ini
 #include lib_keysFunction.ahk
 #include lib_keysSet.ahk
 ;  #include lib_ahkExec.ahk
@@ -44,7 +44,7 @@ allowRunOnClipboardChange:=true
 
 #Include lib_clQ.ahk ;CapsLockPlusQ
 #Include lib_ydTrans.ahk  ;CapsLockPlusT translate
-#Include lib_clTab.ahk 
+#Include lib_clTab.ahk
 #Include lib_functions.ahk ;public functions
 #Include lib_keysFunLogic.ahk ;public functions logic
 #Include lib_bindWins.ahk ;CapsLockPlus` 1~8, windows bind
@@ -367,7 +367,7 @@ return
         !f11::
         !f12::
         try
-            StringTrimLeft, OutputVar, A_ThisHotkey, 1 
+            StringTrimLeft, OutputVar, A_ThisHotkey, 1
             runFunc(keyset["caps_alt_" . OutputVar])
         Capslock2:=""
         Return

@@ -3,12 +3,15 @@
     ; =========   A ~ Z ... Start
     {
         keyFunc_a(){
-            funcLogic_backspace()
+            funcLogic_keyUserFunc_ctrl_a()
+            ;funcLogic_backspace()
             return
         }
 
         keyFunc_b(){
-            funcLogic_drivePop()
+	    funcLogic_searchFile()
+            ;funcLogic_drivePop()
+            ;funcLogic_winbind_activate_last()
             return
         }
 
@@ -28,7 +31,8 @@
         }
 
         keyFunc_f(){
-            funcLogic_searchFile()
+            funcLogic_winbind_activate_last()
+            ;funcLogic_searchFile()
             return
         }
 
@@ -43,7 +47,8 @@
         }
 
         keyFunc_i(){
-            funcLogic_moveUp()
+            SendInput, +{i}
+            ;funcLogic_moveUp()
             return
         }
 
@@ -73,7 +78,8 @@
         }
 
         keyFunc_o(){
-            funcLogic_end()
+            SendInput, +{o}
+            ;funcLogic_end()
             return
         }
 
@@ -111,9 +117,10 @@
             funcLogic_paste1()
             return
         }
-        
+
         keyFunc_w(){
-            funcLogic_closeCurWindow()
+            SendInput, {Esc}
+            ;funcLogic_closeCurWindow()
             return
         }
 
@@ -1232,72 +1239,72 @@
         }
 
         keyFunc_ctrl_minus(){
-            
+
             return
         }
 
         keyFunc_ctrl_equal(){
-            
+
             return
         }
 
         keyFunc_ctrl_backspace(){
-            
+
             return
         }
 
         keyFunc_ctrl_tab(){
-            
+
             return
         }
 
         keyFunc_ctrl_leftSquareBracket(){
-            
+
             return
         }
 
         keyFunc_ctrl_rightSquareBracket(){
-            
+
             return
         }
 
         keyFunc_ctrl_backslash(){
-            
+
             return
         }
 
         keyFunc_ctrl_semicolon(){
-            
+
             return
         }
 
         keyFunc_ctrl_quote(){
-            
+
             return
         }
 
         keyFunc_ctrl_enter(){
-            
+
             return
         }
 
         keyFunc_ctrl_comma(){
-            
+
             return
         }
 
         keyFunc_ctrl_dot(){
-            
+
             return
         }
 
         keyFunc_ctrl_slash(){
-            
+
             return
         }
 
         keyFunc_ctrl_space(){
-            
+
             return
         }
 

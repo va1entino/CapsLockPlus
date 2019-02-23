@@ -24,7 +24,7 @@ funcLogic_drivePop(){
             if hVolume <> -1
             {
                 DllCall("DeviceIoControl", UInt, hVolume , UInt, 0x2D4808
-                    , UInt, 0, UInt, 0, UInt, 0, UInt, 0 , UIntP, dwBytesReturned    
+                    , UInt, 0, UInt, 0, UInt, 0, UInt, 0 , UIntP, dwBytesReturned
                     , UInt, 0)
                 DllCall("CloseHandle", UInt, hVolume)
             }
@@ -188,7 +188,7 @@ funcLogic_OpenTranslate(){
     if WinExist("ahk_class" . dictMiniClass)
     {
         SendInput,^!{m}
-    } 
+    }
 
     SendInput,^!{m}
     return
@@ -244,7 +244,7 @@ funcLogic_cut1(){
         CapsLock2:=""
         return
     }
-        
+
     ClipboardOld:=ClipboardAll
     Clipboard:=""
     SendInput, ^{x}
@@ -328,6 +328,20 @@ funcLogic_winPin(){
 funcLogic_winbind_activate(n){
     global
     activateWinAction(n)
+    window_old=%window_new%
+    window_new=%n%
+    ;MsgBox,%window_new%，%window_old%
+    return
+}
+
+; 激活上一个编号的窗口
+funcLogic_winbind_activate_last(){
+    global
+    activateWinAction(window_old)
+    transformv=%window_new%
+    window_new=%window_old%
+    window_old=%transformv%
+    ;MsgBox,%window_new%,%window_old%
     return
 }
 
@@ -401,11 +415,11 @@ funcLogic_translateWithClipboard(){
     global
     selText:=getSelText()
     if(selText)
-    { 
+    {
         ydTranslate(selText)
     }
     else
-    { 
+    {
         ClipboardOld:=ClipboardAll
         Clipboard:=""
         SendInput, ^{Left}^+{Right}^{insert}
@@ -524,7 +538,7 @@ funcLogic_CloseTranslate(){
     if WinExist("ahk_class" . dictMiniClass)
     {
         SendInput,^!{m}
-    } 
+    }
     return
 }
 
@@ -709,7 +723,7 @@ funcLogic_getJSEvalString(){
         if(!ErrorLevel)
         {
             Clipboard:=result
-    
+
             return
         }
     }
@@ -756,3 +770,9 @@ funcLogic_HuoYingSecondaryScreen(){
 ;     ; FileCreateDir, Path
 ;     return
 ; }
+
+; user ctrl+a全选
+funcLogic_keyUserFunc_ctrl_a(){
+	SendInput,^{a}
+	return
+}
